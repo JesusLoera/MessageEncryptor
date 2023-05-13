@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Decodificador-Alura</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/style-home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <header>
+            <div class="caja">
+                <h1>
+                    <a href="home.html">
+                        <img id="imagen-navegador" src="../imagenes/logo-blanco.png" alt="Logo del Teorema de Noether">
+                    </a>
+                </h1>
+                <nav>
+                    <li><a href="home.html">El Teorema de Noether</a></li>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+
+            <form>
+
+                <div class="titulo-encriptador">
+                    <img src="../imagenes/alura_azul.png" id="logo-alura" alt="Logo de Alura">
+                    <h2>encriptador</h2>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-izquierda">
+                        <div class="cuadro-escribir">
+                            <label for="mensaje" class="titulo-cuadro-texto">!En esta página puedes encriptar y desencriptar texto para compartir mensajes de forma segura!</label>
+                            <textarea cols="48" rows="12" id="mensaje-input" class="input-padron" required placeholder="Aquí escriba el mensaje"></textarea>
+                        </div>
+
+                        <section class="advertenciaBotones">
+                            <h4><img src="../imagenes/bi_exclamation-circle-fill.png" alt="Advertencia" id="circulo-advertencia">
+                            <p id="error"><span id="mensajeTemporal">Solo letras minúsculas y sin acentos</span></p>
+                            </h4><br>
+                        </section>
+        
+                        <input type="button" value="Encriptar" class="botones" id="encriptar">
+                        <input type="button" value="Desencriptar" class="botones" id="desencriptar">
+                    </div>
+    
+                    <div class="col-derecha">
+                        <div class="cuadro-escribir">
+                            <label for="mensaje-encriptado" class="titulo-cuadro-texto"></label>
+                            <textarea cols="27" rows="20" id="mensaje-output" class="input-padron" placeholder="Aquí encontrará el mensaje encriptado/desencriptado"></textarea>
+                        </div>
+        
+                        <input type="button" value="Copiar texto" class="botones" id="copiar-boton">
+                    </div>
+
+                </div>
+                
+            </form>
+
+        </main>
+
+        <footer>
+            <img src="../imagenes/logo-blanco.png" id="imagen-footer" alt="Logo del Teorema de Noether">
+            <p class="email">Contacto: colab.git@gmail.com</p>
+            
+        </footer>
+
+    </body>
+
+</html>
+
+<script>
+
+    function encriptar(){
+        textoInput = document.getElementById('mensaje-input');
+        textoOutput = "";
+        for (var i = 0; i < (textoInput.value).length; i++) {
+            if (textoInput.value[i]=="a") {
+                textoOutput = textoOutput + "ai"
+            } else if (textoInput.value[i]=="e") {
+                textoOutput = textoOutput + "enter"
+            } else if (textoInput.value[i]=="i") {
+                textoOutput = textoOutput + "imes"
+            } else if (textoInput.value[i]=="o") {
+                textoOutput = textoOutput + "ober"
+            } else if (textoInput.value[i]=="u") {
+                textoOutput = textoOutput + "ufat"
+            } else{
+                textoOutput = textoOutput + textoInput.value[i]
+            };
+        }
+        document.getElementById('mensaje-output').textContent = textoOutput
+    };
+    
+    function desencriptar(){
+        textoInput = document.getElementById('mensaje-input');
+        textoOutput = "";
+        for (var i = 0; i < (textoInput.value).length; i++) {
+            for (var i = 0; i < (textoInput.value).length; i++) {
+            if (textoInput.value[i]=="a") {
+                textoOutput = textoOutput + "a";
+                i++;
+            } else if (textoInput.value[i]=="e") {
+                textoOutput = textoOutput + "e";
+                i = i + 4;
+            } else if (textoInput.value[i]=="i") {
+                textoOutput = textoOutput + "i";
+                i = i + 3;
+            } else if (textoInput.value[i]=="o") {
+                textoOutput = textoOutput + "o";
+                i = i + 3;
+            } else if (textoInput.value[i]=="u") {
+                textoOutput = textoOutput + "u";
+                i = i + 3;
+            } else{
+                textoOutput = textoOutput + textoInput.value[i]
+            };
+        }
+        }
+        document.getElementById('mensaje-output').textContent = textoOutput
+    };
+
+    function copiarTexto(){
+        textoOutput = document.getElementById('mensaje-output');
+        navigator.clipboard.writeText(textoOutput.value);
+    }
+
+    var textoInput = document.querySelector("#mensaje-input");
+    var textoOutput = document.querySelector("#mensaje-output");
+    var botonEncriptar = document.querySelector("#encriptar");
+    var botonDesencriptar = document.querySelector("#desencriptar");
+    var botonCopiar = document.querySelector("#copiar-boton");
+
+    textoInput.focus();
+    botonEncriptar.onclick = encriptar;
+    botonDesencriptar.onclick = desencriptar;
+    botonCopiar.onclick = copiarTexto;
+
+</script>

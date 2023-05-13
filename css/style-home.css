@@ -1,0 +1,331 @@
+/* CSS para la página principal */
+
+
+/* Tipo de letra de todo el body*/
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Header 
+    -Navegador
+    -Logo
+*/
+
+header{
+    background: #1B1919;
+    padding: 35px 0 20px 0;
+}
+ 
+.caja{
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+ 
+nav{
+    position: absolute;
+    top: 45px;
+    right: 90px;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 15px;
+} 
+
+nav a{
+    font-size: 22px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: rgb(228, 176, 79);
+}
+
+#imagen-navegador{
+    width: 35%;
+}
+
+/* Main 
+    -Titulo de encriptador
+    -Mensaje para encriptar
+*/
+
+main{
+    padding: 4% 0;
+    background: #e6e6e6;
+}
+
+#logo-alura{
+   float: left;
+}
+
+form{
+    margin: 0 0 0 8%;
+}
+
+form label{
+    display: block;
+    font-size: 16px;
+    margin: 2% 0 2% 0;
+}
+
+form h2{
+    margin-left: 1.5em;
+    font-size: 3em;
+    font-family: 'Electrolize', sans-serif;
+    color: rgb(42, 54, 110);
+}
+
+textarea{
+    font-size: 1.4em;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Create two equal columns that floats next to each other */
+.col-izquierda {
+    float: left;
+    width: 50%;
+    margin-right: 5%;
+}
+
+.col-derecha {
+    float: left;
+    width: 30%;
+    text-align: center;
+}  
+
+.cuadro-escribir{
+    padding: 3% 0% 3% 0%;
+    width: 100%;
+} 
+
+textarea {
+    width: 90%;
+}
+
+.input-padron{
+    display: block ;
+    padding: 2.5% 5%;
+    border-radius: 1em;
+    background: #ffffff;
+}
+
+.titulo-cuadro-texto{
+    color: rgb(19, 15, 80) ;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.botones{
+    width: 44%;
+    padding: 0.8em 0;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    background: rgb(19, 15, 80);
+    border: none;
+    border-radius: 5px;
+    transition: 0.8s all;
+    cursor: pointer;
+    margin-right: 5.6%;
+}
+
+.botones:hover{
+    background: rgb(14, 11, 58);
+    transform: scale(1.2);
+}
+
+#circulo-advertencia{
+    float: left;
+}
+
+#mensajeTemporal{
+    color: #3D3E3F;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+footer{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    background: #1B1919;
+}
+
+#imagen-footer{
+    width: 24%;
+}
+
+.copyright{
+    margin: 1%;
+    font-size: 0.8em;
+    color: white;
+}
+
+.email{
+    color: white;
+    font-size: 1.3em;
+}
+
+
+
+
+@media screen and (max-width:480px){
+
+    header{
+        text-align: center;
+    }
+
+    #logo-alura{
+        width: 8%;
+    }
+
+    .titulo-encriptador{
+        font-size: 0.8em;
+    }
+
+    nav{
+        position: static;
+        margin-top: 0.2em;
+    }
+
+    .caja, .principal{
+        width: auto;
+    }
+
+    .row:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    form{
+        margin: 0 8% 0 8%;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .col-izquierda, .col-derecha{
+        width: 100%;
+        margin-right: 0%;
+    }
+
+    textarea {
+        height: 10em;
+        width: 90%;
+    }
+
+    .titulo-cuadro-texto, nav a{
+        font-size: 1em;
+    }
+
+    .botones{
+        width: 43%;
+        margin-right: 5.6%;
+    }
+
+    .email{
+        font-size: 0.8em;
+    }
+}
+
+
+
+@media screen and (max-width:820px) and (min-width:481px){
+
+    header{
+        text-align: center;
+    }
+
+    #logo-alura{
+        width: 8%;
+    }
+
+    .titulo-encriptador{
+        font-size: 0.8em;
+    }
+
+    nav{
+        position: static;
+        margin-top: 0.2em;
+    }
+
+    .caja, .principal{
+        width: auto;
+    }
+
+    .row:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    form{
+        margin: 0 8% 0 8%;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .col-izquierda, .col-derecha{
+        width: 100%;
+        margin-right: 0%;
+    }
+
+    textarea {
+        height: 10em;
+        width: 90%;
+    }
+
+    .titulo-cuadro-texto, nav a{
+        font-size: 1em;
+    }
+
+    .botones{
+        width: 43%;
+        margin-right: 5.6%;
+    }
+
+    .email{
+        font-size: 0.8em;
+    }
+}
+
+
+@media screen and (max-width:1195px) and (min-width:819px){
+
+    header{
+        text-align: center;
+    }
+
+    nav{
+        position: static;
+        margin-top: 0.2em;
+    }
+
+    .caja, .principal{
+        width: auto;
+    }
+
+    .botones{
+        width: 40%;
+        padding: 0.8em 0;
+        font-size: 19px;
+        font-weight: bold;
+        color: white;
+        background: rgb(19, 15, 80);
+        border: none;
+        border-radius: 5px;
+        transition: 0.8s all;
+        cursor: pointer;
+        margin-right: 5.6%;
+    }
+}
